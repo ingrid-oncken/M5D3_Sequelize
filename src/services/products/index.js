@@ -7,13 +7,13 @@ const Product = db.Product
 
 const { Op } = s
 
-const router = express.Router()
+const productRouter = express.Router()
 
-router
+productRouter
   .route("/")
   .get(async (req, res, next) => {
     try {
-      const data = await Product.findAll()
+      const data = await Product.findAll({ include: Category })
 
       res.send(data)
     } catch (error) {
@@ -24,6 +24,7 @@ router
 
   .post(async (req, res, next) => {
     try {
+      console.log(req.body)
       const data = await Product.create(req.body)
       res.send(data)
     } catch (error) {
@@ -32,7 +33,7 @@ router
     }
   })
 
-router
+productRouter
   .route("/:id")
   .get(async (req, res, next) => {
     try {
@@ -43,6 +44,7 @@ router
       next(error)
     }
   })
+
   .put(async (req, res, next) => {
     try {
       const data = await Product.update(req.body, {
@@ -73,4 +75,4 @@ router
     }
   })
 
-export default router
+export default productRouter

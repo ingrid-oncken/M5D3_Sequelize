@@ -6,9 +6,9 @@ const Product = db.Product
 import s from "sequelize"
 const { Op } = s
 
-const router = express.Router()
+const categoryRouter = express.Router()
 
-router
+categoryRouter
   .route("/")
   .get(async (req, res, next) => {
     try {
@@ -31,7 +31,7 @@ router
     }
   })
 
-router
+categoryRouter
   .route("/:id")
   .get(async (req, res, next) => {
     try {
@@ -72,4 +72,4 @@ router
     }
   })
 
-export default router
+export default categoryRouter

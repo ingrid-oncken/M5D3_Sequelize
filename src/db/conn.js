@@ -1,5 +1,7 @@
 import { Sequelize } from "sequelize"
 
+//This is connecting to my database (on PostgreSQL)
+
 const { PGDATABASE, PGUSERNAME, PGPASSWORD, PGHOST, PGPORT } = process.env
 
 const sequelize = new Sequelize(PGDATABASE, PGUSERNAME, PGPASSWORD, {

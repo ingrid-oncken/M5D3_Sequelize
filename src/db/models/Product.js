@@ -12,10 +12,6 @@ const Product = sequelize.define("product", {
     type: DataTypes.STRING,
     allowNull: false,
   },
-  // category: {
-  //   type: DataTypes.STRING,
-  //   allowNull: false,
-  // },
   price: {
     type: DataTypes.INTEGER,
     allowNull: false,
@@ -31,10 +27,6 @@ const Product = sequelize.define("product", {
   image: {
     type: DataTypes.TEXT,
     allowNull: false,
-    validate: {
-      isUrl: true,
-      msg: "Invalid url",
-    },
   },
 })
 
