@@ -1,5 +1,5 @@
 {
-  "name": "M5D3 Sequelize",
+  "name": "M5D3_Sequelize",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -16,7 +16,7 @@
   "devDependencies": {},
   "scripts": {
     "start": "node ./server.js",
-    "dev": "nodemon -e js -r dotenv/config server.js"
+    "dev": "nodemon -e js -r dotenv/config ./server.js"
   },
   "repository": {
     "type": "git",
