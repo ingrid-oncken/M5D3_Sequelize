@@ -21,7 +21,7 @@ server.use("/product", productRouter)
 // )
 
 db.sequelize
-  .sync({ force: true })
+  .sync()
   .then(() => {
     server.listen(PORT, () =>
       console.log("🚀 Server is running on port ", PORT)
@@ -32,3 +32,7 @@ db.sequelize
     )
   })
   .catch((error) => console.log(error))
+
+  //{ force: true } delete everything
+  //{ alter: true } if I do any change I don't loose the info already present on the table
+  
